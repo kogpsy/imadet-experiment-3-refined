@@ -6,9 +6,7 @@
  * The following lines specify which media directories will be packaged and
  * preloaded by jsPsych. Modify them to arbitrary paths (or comma-separated
  * lists of paths) within the `media` directory, or just delete them.
- * @imageDir images
- * @audioDir audio
- * @videoDir video
+ * @assets media/images/
  */
 
 // Terser requires license comments not to be in the toplevel scope, which is
@@ -55,7 +53,14 @@ import GaborStimulusPlugin, {
   GaborStimulusPluginConfig,
   generateNoiseFrames,
 } from '@kogpsy/jspsych-gabor-stimulus-plugin';
-import { getGaborPluginConfig } from './utils';
+import {
+  getFixationCross,
+  getGaborPluginConfig,
+  getRandomResponseMapping,
+} from './utils';
+import HtmlKeyboardResponsePlugin from '@jspsych/plugin-html-keyboard-response';
+import { STIMULUS_SIZE } from './constants';
+import { getPraciceDetectionTimeline } from './practiceDetectionTimeline';
 
 /**
  * This method will be executed by jsPsych Builder and is expected to run the
@@ -78,27 +83,76 @@ export async function run({ assetPaths, input = {}, environment }) {
   // Define the main timeline array
   const timeline = [];
 
-  // Define stimulus size in pixels
-  const stimulusSize = 250;
+  // Instantiate fixation cross trial
+  const fixationCrossTrial = getFixationCross();
+
+  // Generate response mapping
+  const responseMapping = getRandomResponseMapping();
 
   // Generate noise frames for stimulus background
   const backgroundNoiseFrames = generateNoiseFrames(
-    stimulusSize,
-    stimulusSize,
+    STIMULUS_SIZE,
+    STIMULUS_SIZE,
     30
   );
 
   // Preload assets
   timeline.push({
     type: PreloadPlugin,
-    images: backgroundNoiseFrames,
+    images: [...backgroundNoiseFrames, [...assetPaths.images]],
   });
 
-  // Gabor patch stimulus
+  // Push the welcome screen to the timeline
   timeline.push({
-    type: GaborStimulusPlugin,
-    config: getGaborPluginConfig(stimulusSize, backgroundNoiseFrames, 0.3, 45),
+    type: HtmlKeyboardResponsePlugin,
+    stimulus: `
+      <h1>
+        Willkommen zum Experiment!
+      </h1>
+      <p>
+        Drücken Sie eine beliebige Taste, um zu starten.
+      </p>
+    `,
   });
+
+  // Push the main explanation of the experiment to the timeline
+  timeline.push({
+    type: HtmlKeyboardResponsePlugin,
+    stimulus: `
+      <p>
+        Während diesem Experiment werden Sie nach <strong>verrauschten
+          Gittermustern</strong> suchen (siehe unten).
+      </p>
+      <p>
+        <strong>Gittermuster</strong> bestehen aus schwarz-weiss gestreiften
+        Linien (links).
+      </p>
+      <p>
+        Das <strong>Rauschen</strong> ist eine Sammlung von zufällig
+        angeordneten schwarzen und weissen Punkten (mitte).
+      </p>
+      <p>
+        Ihre Aufgabe besteht darin, bei jedem Durchgang anzugeben, ob Sie ein
+        Gittermuster gesehen haben oder nicht (rechts).
+      </p>
+      <div class="vertical_spacer"></div>
+      <div class="vertical_spacer"></div>
+      <img src='../media/images/example-stimulus.jpg' width=700></img>
+      <div class="vertical_spacer"></div>
+      <p>Drücken Sie die [Leertaste], um fortzufahren.</p>
+    `,
+    choices: [' '],
+  });
+
+  // Add practice trials
+  timeline.push(
+    getPraciceDetectionTimeline(
+      jsPsych,
+      responseMapping,
+      backgroundNoiseFrames,
+      fixationCrossTrial
+    )
+  );
 
   // Run the experiment
   await jsPsych.run(timeline);

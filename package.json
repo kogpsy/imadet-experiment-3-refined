@@ -12,11 +12,11 @@
     "@jspsych/plugin-fullscreen": "^1.1.0",
     "@jspsych/plugin-html-keyboard-response": "^1.1.0",
     "@jspsych/plugin-preload": "^1.1.0",
-    "@kogpsy/jspsych-gabor-stimulus-plugin": "^0.9.0",
+    "@kogpsy/jspsych-gabor-stimulus-plugin": "^0.9.2",
     "jspsych": "^7.2.1"
   },
   "devDependencies": {
-    "jspsych-builder": "^4.2.1",
+    "jspsych-builder": "^4.3.0",
     "prettier": "2.6.2"
   },
   "browserslist": ">0.25%, not dead",
