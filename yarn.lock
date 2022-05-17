@@ -311,6 +311,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@kogpsy/jspsych-gabor-stimulus-plugin@npm:^0.9.0":
+  version: 0.9.0
+  resolution: "@kogpsy/jspsych-gabor-stimulus-plugin@npm:0.9.0"
+  peerDependencies:
+    jspsych: ^7.0.0
+  checksum: 8bff77f8c9a2c61c291019b28954f6a2a41864f14cfd8e486d6e9e5345d60bd640836f8973e9e09aab8d330a71f18149de8725a508bc8f7bc94805a4bb16088a
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -3475,6 +3484,7 @@ __metadata:
     "@jspsych/plugin-fullscreen": ^1.1.0
     "@jspsych/plugin-html-keyboard-response": ^1.1.0
     "@jspsych/plugin-preload": ^1.1.0
+    "@kogpsy/jspsych-gabor-stimulus-plugin": ^0.9.0
     jspsych: ^7.2.1
     jspsych-builder: ^4.2.1
     prettier: 2.6.2
