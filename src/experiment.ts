@@ -63,6 +63,7 @@ import { STIMULUS_SIZE } from './constants';
 import { getPraciceDetectionTimeline } from './practiceDetectionTimeline';
 import { getStaircaseDetectionTimeline } from './staircaseDetectionTimeline';
 import { ParticipantVisibilityThreshold } from './ParticipantVisibilityThreshold';
+import { getPracticeImaginationTimeline } from './practiceImaginationTimeline';
 
 /**
  * This method will be executed by jsPsych Builder and is expected to run the
@@ -153,23 +154,32 @@ export async function run({ assetPaths, input = {}, environment }) {
   });
 
   // Add practice trials
-  timeline.push(
-    getPraciceDetectionTimeline(
-      jsPsych,
-      responseMapping,
-      backgroundNoiseFrames,
-      fixationCrossTrial
-    )
-  );
+  // timeline.push(
+  //   getPraciceDetectionTimeline(
+  //     jsPsych,
+  //     responseMapping,
+  //     backgroundNoiseFrames,
+  //     fixationCrossTrial
+  //   )
+  // );
 
   // Add staircase sub-timeline
+  // timeline.push(
+  //   getStaircaseDetectionTimeline(
+  //     jsPsych,
+  //     responseMapping,
+  //     backgroundNoiseFrames,
+  //     fixationCrossTrial,
+  //     participantGratingVisibility
+  //   )
+  // );
+
+  // Add imagination practice sub-timeline
   timeline.push(
-    getStaircaseDetectionTimeline(
+    getPracticeImaginationTimeline(
       jsPsych,
-      responseMapping,
-      backgroundNoiseFrames,
       fixationCrossTrial,
-      participantGratingVisibility
+      backgroundNoiseFrames
     )
   );
 

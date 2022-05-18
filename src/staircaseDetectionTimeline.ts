@@ -24,11 +24,7 @@ import GaborStimulusPlugin from '@kogpsy/jspsych-gabor-stimulus-plugin';
 
 // Import constants
 import {
-  BACKGROUND_ANIMATION_FPS,
   GRATING_VISIBILITY_LEVEL_INIT,
-  STAIRCASE_ACCURACY_LOWER_BOUND,
-  STAIRCASE_ACCURACY_TARGET,
-  STAIRCASE_ACCURACY_UPPER_BOUND,
   STAIRCASE_CYCLES,
   STAIRCASE_TRIALS_PER_CYCLE,
   STIMULUS_SIZE,
@@ -51,7 +47,7 @@ import {
  * the current experimental session
  * @param fixationCrossTrial A jsPsych trial which briefly shows a fixation
  * cross
- * @param participantGratingVisibility A "shared" object which holds
+ * @param participantVisibilityThreshold A "shared" object which holds
  * the grating visibility levels of the current participant. Contains a setter
  * which is used here.
  * @returns A jsPsych nested timeline

@@ -12,7 +12,6 @@ import GaborStimulusPlugin from '@kogpsy/jspsych-gabor-stimulus-plugin';
 import { JsPsych } from 'jspsych';
 
 import {
-  BACKGROUND_ANIMATION_FPS,
   GRATING_VISIBILITY_LEVEL_INIT,
   PRACTICE_DETECTION_REPETITIONS,
   STIMULUS_SIZE,
