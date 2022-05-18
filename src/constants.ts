@@ -26,8 +26,14 @@ export const BACKGROUND_ANIMATION_FPS = 10;
 export const FIXATION_CROSS_DURATION = 200;
 
 // Define the start level of the visibility of the gratings (from 0 to 1)
+// Dijkstra uses 46 on her scale which is equivalent to 0.92 on our scale, but
+// it seems that this is very easy. So we've lowered the default to 0.8.
 // Default: 0.92
-export const GRATING_VISIBILITY_LEVEL_INIT = 0.92;
+export const GRATING_VISIBILITY_LEVEL_INIT = 0.8;
+
+// Define the maximum level of the grating visibility
+// Default: 1
+export const GRATING_VISIBILITY_LEVEL_MAX = 1;
 
 /**
  *

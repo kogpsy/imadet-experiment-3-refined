@@ -321,6 +321,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@jspsych/plugin-call-function@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@jspsych/plugin-call-function@npm:1.1.0"
+  peerDependencies:
+    jspsych: ">=7.1.0"
+  checksum: f8266f7b83235b3c9ff461c1388aa5f9675b7358f2ea892792350bdf03eacc824af34315b2e7980f85f9d610fad1309f50463286b8a8de8a10fa0d8117255fa5
+  languageName: node
+  linkType: hard
+
 "@jspsych/plugin-fullscreen@npm:^1.1.0":
   version: 1.1.0
   resolution: "@jspsych/plugin-fullscreen@npm:1.1.0"
@@ -3383,6 +3392,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "jspsych-experiment-template@workspace:."
   dependencies:
+    "@jspsych/plugin-call-function": ^1.1.0
     "@jspsych/plugin-fullscreen": ^1.1.0
     "@jspsych/plugin-html-keyboard-response": ^1.1.0
     "@jspsych/plugin-preload": ^1.1.0

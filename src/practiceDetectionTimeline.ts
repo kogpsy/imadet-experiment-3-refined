@@ -30,7 +30,7 @@ import {
  * @param jsPsychInstance The jsPsych instance to be used
  * @param responseMapping An object containing the response mapping for
  * the current experimental session
- * @param fixationCross A jsPsych trial which briefly shows a fixation
+ * @param fixationCrossTrial A jsPsych trial which briefly shows a fixation
  * cross
  * @returns A jsPsych nested timeline
  */

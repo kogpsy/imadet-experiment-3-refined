@@ -15,6 +15,11 @@ import { JsPsych } from 'jspsych';
 import {
   BACKGROUND_ANIMATION_FPS,
   FIXATION_CROSS_DURATION,
+  GRATING_VISIBILITY_LEVEL_MAX,
+  STAIRCASE_ACCURACY_LOWER_BOUND,
+  STAIRCASE_ACCURACY_TARGET,
+  STAIRCASE_ACCURACY_UPPER_BOUND,
+  STAIRCASE_TRIALS_PER_CYCLE,
   STIMULUS_SIZE,
 } from './constants';
 
@@ -161,3 +166,74 @@ export const calculatePracticeStats = (
     trialCount: trials.count(),
   };
 };
+
+/**
+ * Calculates participand response accuracy of the previous staircase cycle and
+ * suggests a new grating visibility level.
+ *
+ * @param data The data object containing the relevant trials to
+ * calculate the stats.
+ * @param previousGratingVisibility An integer variable containing the previous
+ * gratingVisibility.
+ * @returns An object containing the accuracy and the suggested new grating
+ * visibility level.
+ */
+export const calculateStaircaseStats = (
+  data: any,
+  previousGratingVisibility: number
+) => {
+  // Declare a variable for the newly calculated gratingVisibility
+  let newGratingVisibility = previousGratingVisibility;
+
+  // Get all trials of the previous cycle which contain relevant data
+  const relevantTrials = data
+    // Multiplied by 3 since for each stimulus trial, there is also a fixation
+    // cross trial
+    .last(STAIRCASE_TRIALS_PER_CYCLE * 2)
+    .filter({ test_part: 'staircase_test' });
+  // Based on that data, calcualte the number of correct responses and the
+  // accuracy.
+  const correctResponses = relevantTrials.filter({ correct: true }).count();
+  const accuracy = Math.round(
+    (correctResponses / relevantTrials.count()) * 100
+  );
+
+  // If the measured accuracy differs to strongly from the target accuracy,
+  // adjust the difficulty.
+  if (accuracy > STAIRCASE_ACCURACY_UPPER_BOUND) {
+    // Make it harder (less visible)
+    newGratingVisibility =
+      Math.round(
+        (previousGratingVisibility -
+          // Dijkstra divides by 10 here, but her scale is from 1 to 50 while our
+          // scale is from 0 to 1. This is why we divide by 500.
+          (accuracy - STAIRCASE_ACCURACY_TARGET) / 500) *
+          100
+      ) / 100;
+  } else if (accuracy < STAIRCASE_ACCURACY_LOWER_BOUND) {
+    // Make it easier (more visible)
+    newGratingVisibility =
+      Math.round(
+        (previousGratingVisibility +
+          (STAIRCASE_ACCURACY_TARGET - accuracy) / 500) *
+          100
+      ) / 100;
+  }
+  // Make sure we are not getting out of bounds
+  if (newGratingVisibility > GRATING_VISIBILITY_LEVEL_MAX) {
+    newGratingVisibility = GRATING_VISIBILITY_LEVEL_MAX;
+  }
+
+  return {
+    newGratingVisibility,
+    accuracy,
+  };
+};
+
+/**
+ * Different kinds of grating tilt
+ */
+export enum GratingTilt {
+  Left,
+  Right,
+}

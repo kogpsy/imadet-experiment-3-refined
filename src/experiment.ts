@@ -61,6 +61,8 @@ import {
 import HtmlKeyboardResponsePlugin from '@jspsych/plugin-html-keyboard-response';
 import { STIMULUS_SIZE } from './constants';
 import { getPraciceDetectionTimeline } from './practiceDetectionTimeline';
+import { getStaircaseDetectionTimeline } from './staircaseDetectionTimeline';
+import { ParticipantVisibilityThreshold } from './ParticipantVisibilityThreshold';
 
 /**
  * This method will be executed by jsPsych Builder and is expected to run the
@@ -85,6 +87,12 @@ export async function run({ assetPaths, input = {}, environment }) {
 
   // Instantiate fixation cross trial
   const fixationCrossTrial = getFixationCross();
+
+  // Instantiate object which holds participant visibility levels with defaults
+  const participantGratingVisibility = new ParticipantVisibilityThreshold(
+    undefined,
+    undefined
+  );
 
   // Generate response mapping
   const responseMapping = getRandomResponseMapping();
@@ -145,12 +153,23 @@ export async function run({ assetPaths, input = {}, environment }) {
   });
 
   // Add practice trials
+  // timeline.push(
+  //   getPraciceDetectionTimeline(
+  //     jsPsych,
+  //     responseMapping,
+  //     backgroundNoiseFrames,
+  //     fixationCrossTrial
+  //   )
+  // );
+
+  // Add staircase sub-timeline
   timeline.push(
-    getPraciceDetectionTimeline(
+    getStaircaseDetectionTimeline(
       jsPsych,
       responseMapping,
       backgroundNoiseFrames,
-      fixationCrossTrial
+      fixationCrossTrial,
+      participantGratingVisibility
     )
   );
 
