@@ -160,6 +160,11 @@ export const getStaircaseDetectionTimeline = (
       // later on.
       data.test_part = 'staircase_test';
     },
+    post_trial_gap: () => {
+      // Pick an inter trial interval between 600s and 1200ms
+      const iti = Math.floor(Math.random() * 1201 + 600);
+      return iti;
+    },
   };
 
   // Define one cycle

@@ -153,14 +153,14 @@ export async function run({ assetPaths, input = {}, environment }) {
   });
 
   // Add practice trials
-  // timeline.push(
-  //   getPraciceDetectionTimeline(
-  //     jsPsych,
-  //     responseMapping,
-  //     backgroundNoiseFrames,
-  //     fixationCrossTrial
-  //   )
-  // );
+  timeline.push(
+    getPraciceDetectionTimeline(
+      jsPsych,
+      responseMapping,
+      backgroundNoiseFrames,
+      fixationCrossTrial
+    )
+  );
 
   // Add staircase sub-timeline
   timeline.push(

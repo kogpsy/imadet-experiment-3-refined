@@ -84,6 +84,11 @@ export const getPraciceDetectionTimeline = (
         data.response
       );
     },
+    post_trial_gap: () => {
+      // Pick an inter trial interval between 600s and 1200ms
+      const iti = Math.floor(Math.random() * 1200 + 600);
+      return iti;
+    },
   };
 
   // Combine the above two into a trial procedure, so that multiple animations
