@@ -64,6 +64,7 @@ import { getPraciceDetectionTimeline } from './practiceDetectionTimeline';
 import { getStaircaseDetectionTimeline } from './staircaseDetectionTimeline';
 import { ParticipantVisibilityThreshold } from './ParticipantVisibilityThreshold';
 import { getPracticeImaginationTimeline } from './practiceImaginationTimeline';
+import { getMainExperimentTimeline } from './mainExperimentTimeline';
 
 /**
  * This method will be executed by jsPsych Builder and is expected to run the
@@ -90,7 +91,7 @@ export async function run({ assetPaths, input = {}, environment }) {
   const fixationCrossTrial = getFixationCross();
 
   // Instantiate object which holds participant visibility levels with defaults
-  const participantGratingVisibility = new ParticipantVisibilityThreshold(
+  const participantVisibilityThreshold = new ParticipantVisibilityThreshold(
     undefined,
     undefined
   );
@@ -170,16 +171,27 @@ export async function run({ assetPaths, input = {}, environment }) {
   //     responseMapping,
   //     backgroundNoiseFrames,
   //     fixationCrossTrial,
-  //     participantGratingVisibility
+  //     participantVisibilityThreshold
   //   )
   // );
 
   // Add imagination practice sub-timeline
+  // timeline.push(
+  //   getPracticeImaginationTimeline(
+  //     jsPsych,
+  //     fixationCrossTrial,
+  //     backgroundNoiseFrames
+  //   )
+  // );
+
+  // Add main experiment sub-timeline
   timeline.push(
-    getPracticeImaginationTimeline(
+    getMainExperimentTimeline(
       jsPsych,
+      responseMapping,
       fixationCrossTrial,
-      backgroundNoiseFrames
+      backgroundNoiseFrames,
+      participantVisibilityThreshold
     )
   );
 

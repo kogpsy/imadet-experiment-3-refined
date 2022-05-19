@@ -1,5 +1,12 @@
 # imadet-experiment-3-refined
 
+## TODO
+
+- Adapt main timeline
+- Write final survey
+- Collect or generate participant ID
+- Curate data as far as possible
+
 This is the code of a project which aims to refine the experiment 3 of the IMADET study by [Dijkstra et al. (2021)][original-study]. It is based on the [refactored version][original-study-refactored] of the original code, and ported to TypeScript.
 
 ## Changes that have been made
