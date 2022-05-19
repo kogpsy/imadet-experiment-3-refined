@@ -332,7 +332,7 @@ export async function run({ assetPaths, input = {}, environment }) {
 <p>Klicken Sie auf weiter, um Ihre Daten einzureichen.</p> `,
     button_label: 'Weiter',
     data: {
-      test_part: 'survey_demographics',
+      test_part: 'survey_post',
     },
     on_finish: (data: any) => {
       jsPsych.data.addProperties(data.response);
