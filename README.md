@@ -1,12 +1,5 @@
 # imadet-experiment-3-refined
 
-## TODO
-
-- Adapt main timeline
-- Write final survey
-- Collect or generate participant ID
-- Curate data as far as possible
-
 This is the code of a project which aims to refine the experiment 3 of the IMADET study by [Dijkstra et al. (2021)][original-study]. It is based on the [refactored version][original-study-refactored] of the original code, and ported to TypeScript.
 
 ## Changes that have been made
@@ -15,7 +8,7 @@ This is the code of a project which aims to refine the experiment 3 of the IMADE
 
 In the original study, gabor patches - the main stimuli - are faded in during a 2 second period in front of an animated noise background. After the 2 seconds, a response screen is displayed. In that way, it is practically impossible to analyse reaction times. This has been changed. The stimuli are still displayed in front of an animated noise background, but their visibility is stable, and they are displayed until the participant responds.
 
-The stimuli themselves were also changed out. The gabor patches used in the original study are not really sinusoidal and the aperture applied is almost not blurred at all. They were replaced by more typical gabor patches found in visual decision experiments, generated using [jspsych-gabor-stimulus-plugin][gabor-plugin].
+The stimuli themselves were also changed out. The gabor patches used in the original study are not really sinusoidal and the aperture applied does not seem to be blurred in a Gaussian way. They were replaced by more typical gabor patches found in experiments on perception. [jspsych-gabor-stimulus-plugin][gabor-plugin] was used to generate them.
 
 **Timing**
 
