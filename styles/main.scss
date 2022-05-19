@@ -29,6 +29,27 @@ p {
   font-size: 18px;
 }
 
+.text-input {
+  border: 1px solid rgb(170, 170, 170);
+  background-color: rgb(128, 128, 128);
+  padding: 7px;
+  border-radius: 4px;
+  color: white;
+
+  &:focus {
+    outline: none;
+    border: 1px solid white;
+  }
+}
+
+.checkbox-label {
+  margin-left: 30px;
+}
+
+.checkbox-input {
+  margin-left: 0;
+}
+
 button,
 input,
 select,
