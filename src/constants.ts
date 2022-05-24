@@ -104,5 +104,5 @@ export const MAIN_EXPERIMENT_CONDITION_REPETITIONS = 2;
 // Controls how many animations are shown in each of the above mentioned
 // conditions. This must be an even number, so that in exactly 50% of the trials
 // a grating vs. a noise animation can be shown.
-// Default: 24
-export const MAIN_EXPERIMENT_TRIALS_PER_CONDITION = 24;
+// Default: 24 (Dijkstra used this value, here it is increased)
+export const MAIN_EXPERIMENT_TRIALS_PER_CONDITION = 50;
