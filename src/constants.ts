@@ -18,7 +18,7 @@
 export const STIMULUS_SIZE = 250;
 
 // Define FPS of the background animation
-// Default: 20
+// Default: 10
 export const BACKGROUND_ANIMATION_FPS = 10;
 
 // Define how long the fixation cross should be displayed (in milliseconds)
