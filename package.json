@@ -1,6 +1,6 @@
 {
   "name": "imadet-experiment-3-refined",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "license": "MIT",
   "author": "Robin Bürkli <robuba.jr@gmx.ch>",
   "description": "Code for a refined replication of the third experiment of the IMADET study by Dijkstra et al. (2021).",
