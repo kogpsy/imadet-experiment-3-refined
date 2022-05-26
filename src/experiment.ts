@@ -49,15 +49,8 @@ import { initJsPsych } from 'jspsych';
 
 // Import jsPsych plugins
 import PreloadPlugin from '@jspsych/plugin-preload';
-import GaborStimulusPlugin, {
-  GaborStimulusPluginConfig,
-  generateNoiseFrames,
-} from '@kogpsy/jspsych-gabor-stimulus-plugin';
-import {
-  getFixationCross,
-  getGaborPluginConfig,
-  getRandomResponseMapping,
-} from './utils';
+import { generateNoiseFrames } from '@kogpsy/jspsych-gabor-stimulus-plugin';
+import { getFixationCross, getRandomResponseMapping } from './utils';
 import HtmlKeyboardResponsePlugin from '@jspsych/plugin-html-keyboard-response';
 import { STIMULUS_SIZE } from './constants';
 import { getPraciceDetectionTimeline } from './practiceDetectionTimeline';
