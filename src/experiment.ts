@@ -6,7 +6,7 @@
  * The following lines specify which media directories will be packaged and
  * preloaded by jsPsych. Modify them to arbitrary paths (or comma-separated
  * lists of paths) within the `media` directory, or just delete them.
- * @assets media/images/
+ * @assets media/images
  */
 
 // Terser requires license comments not to be in the toplevel scope, which is
@@ -247,7 +247,7 @@ export async function run({ assetPaths, input = {}, environment }) {
       </p>
       <div class="vertical_spacer"></div>
       <div class="vertical_spacer"></div>
-      <img src='../media/images/example-stimulus.jpg' width=700></img>
+      <img src='media/images/example-stimulus.jpg' width=700></img>
       <div class="vertical_spacer"></div>
       <p>Drücken Sie die [Leertaste], um fortzufahren.</p>
     `,

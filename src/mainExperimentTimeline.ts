@@ -317,40 +317,40 @@ export const getMainExperimentTimeline = (
       {
         condition: 'display_left_imagine_nothing',
         blockInstructionTilt: 'links',
-        blockInstructionImage: '../media/images/example-noise-only.jpg',
+        blockInstructionImage: 'media/images/example-noise-only.jpg',
         blockInstructionImagination: '<strong>nichts</strong>',
       },
       {
         condition: 'display_left_imagine_left',
         blockInstructionTilt: 'links',
-        blockInstructionImage: '../media/images/example-grating-left-tilt.jpg',
+        blockInstructionImage: 'media/images/example-grating-left-tilt.jpg',
         blockInstructionImagination:
           '<strong>nach links geneigte Gittermuster</strong> (siehe unten)',
       },
       {
         condition: 'display_left_imagine_right',
         blockInstructionTilt: 'links',
-        blockInstructionImage: '../media/images/example-grating-right-tilt.jpg',
+        blockInstructionImage: 'media/images/example-grating-right-tilt.jpg',
         blockInstructionImagination:
           '<strong>nach rechts geneigte Gittermuster</strong> (siehe unten)',
       },
       {
         condition: 'display_right_imagine_nothing',
         blockInstructionTilt: 'rechts',
-        blockInstructionImage: '../media/images/example-noise-only.jpg',
+        blockInstructionImage: 'media/images/example-noise-only.jpg',
         blockInstructionImagination: '<strong>nichts</strong>',
       },
       {
         condition: 'display_right_imagine_left',
         blockInstructionTilt: 'rechts',
-        blockInstructionImage: '../media/images/example-grating-left-tilt.jpg',
+        blockInstructionImage: 'media/images/example-grating-left-tilt.jpg',
         blockInstructionImagination:
           '<strong>nach links geneigte Gittermuster</strong> (siehe unten)',
       },
       {
         condition: 'display_right_imagine_right',
         blockInstructionTilt: 'rechts',
-        blockInstructionImage: '../media/images/example-grating-right-tilt.jpg',
+        blockInstructionImage: 'media/images/example-grating-right-tilt.jpg',
         blockInstructionImagination:
           '<strong>nach rechts geneigte Gittermuster</strong> (siehe unten)',
       },

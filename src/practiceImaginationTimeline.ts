@@ -69,12 +69,10 @@ export const getPracticeImaginationTimeline = (
       let instructionExampleImage = '';
       if (gratingTilt === 'right') {
         instructionGratingTilt = 'rechts';
-        instructionExampleImage =
-          '../media/images/example-grating-right-tilt.jpg';
+        instructionExampleImage = 'media/images/example-grating-right-tilt.jpg';
       } else if (gratingTilt === 'left') {
         instructionGratingTilt = 'links';
-        instructionExampleImage =
-          '../media/images/example-grating-left-tilt.jpg';
+        instructionExampleImage = 'media/images/example-grating-left-tilt.jpg';
       }
       return `
         <p>

@@ -2909,6 +2909,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"imadet-experiment-3-refined@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "imadet-experiment-3-refined@workspace:."
+  dependencies:
+    "@jspsych/plugin-call-function": ^1.1.0
+    "@jspsych/plugin-fullscreen": ^1.1.0
+    "@jspsych/plugin-html-keyboard-response": ^1.1.0
+    "@jspsych/plugin-preload": ^1.1.0
+    "@jspsych/plugin-survey-html-form": ^1.0.0
+    "@kogpsy/jspsych-gabor-stimulus-plugin": ^0.9.2
+    jspsych: ^7.2.1
+    jspsych-builder: ^4.3.0
+    prettier: 2.6.2
+  languageName: unknown
+  linkType: soft
+
 "immutable@npm:^4.0.0":
   version: 4.0.0
   resolution: "immutable@npm:4.0.0"
@@ -3396,22 +3412,6 @@ __metadata:
   checksum: a53fa21ac0c2357495187e68f169951a3a5fd7d0338effe8e0e32060f77d8af5b59227dfc41e90dcfb22f0e672fae595a8cd5c81bc2285f2c5c4896680a64f54
   languageName: node
   linkType: hard
-
-"jspsych-experiment-template@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "jspsych-experiment-template@workspace:."
-  dependencies:
-    "@jspsych/plugin-call-function": ^1.1.0
-    "@jspsych/plugin-fullscreen": ^1.1.0
-    "@jspsych/plugin-html-keyboard-response": ^1.1.0
-    "@jspsych/plugin-preload": ^1.1.0
-    "@jspsych/plugin-survey-html-form": ^1.0.0
-    "@kogpsy/jspsych-gabor-stimulus-plugin": ^0.9.2
-    jspsych: ^7.2.1
-    jspsych-builder: ^4.3.0
-    prettier: 2.6.2
-  languageName: unknown
-  linkType: soft
 
 "jspsych@npm:^7.2.1":
   version: 7.2.1
