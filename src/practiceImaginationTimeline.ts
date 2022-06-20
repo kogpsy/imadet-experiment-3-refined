@@ -38,7 +38,7 @@ export const getPracticeImaginationTimeline = (
   backgroundNoiseFrames: string[]
 ) => {
   // Declare and initiate a timeline array
-  let timeline = [];
+  let timeline: any[] = [];
 
   // Define the main instruction of this experiment part
   const mainInstruction = {

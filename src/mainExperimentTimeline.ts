@@ -42,7 +42,7 @@ export const getMainExperimentTimeline = (
   participantVisibilityThreshold: ParticipantVisibilityThreshold
 ) => {
   // Declare and initiate a timeline array
-  let timeline = [];
+  let timeline: any[] = [];
 
   // Define a counter to keep track of the currently carried out block
   let blockCounter = 0;
@@ -241,7 +241,7 @@ export const getMainExperimentTimeline = (
     choices: ['l', 'r', 'n'],
     on_finish: (data: any) => {
       // First, figure out the correct response based on timeline vars
-      let correctResponse: string;
+      let correctResponse: string = '';
       const condition = jsPsychInstance.timelineVariable('condition');
       if (condition.includes('imagine_nothing')) {
         correctResponse = 'n';

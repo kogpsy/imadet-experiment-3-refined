@@ -119,11 +119,15 @@ export const getFixationCross = () => {
     stimulus: svg.outerHTML,
     // Set the style of that particular plugin instance
     on_load: () => {
-      document.getElementById(
-        'jspsych-html-keyboard-response-stimulus'
+      (
+        document.getElementById(
+          'jspsych-html-keyboard-response-stimulus'
+        ) as HTMLElement
       ).style.fontSize = '0';
-      document.getElementById(
-        'jspsych-html-keyboard-response-stimulus'
+      (
+        document.getElementById(
+          'jspsych-html-keyboard-response-stimulus'
+        ) as HTMLElement
       ).style.lineHeight = '0';
     },
     choices: 'NO_KEYS',

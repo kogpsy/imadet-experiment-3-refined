@@ -40,7 +40,7 @@ export const getPraciceDetectionTimeline = (
   fixationCrossTrial: any
 ): { timeline: any[] } => {
   // Declare the sub-timeline array
-  let timeline = [];
+  let timeline: any[] = [];
 
   // Obtain a copy of initial grating visibility
   let gratingVisibility = GRATING_VISIBILITY_LEVEL_INIT;

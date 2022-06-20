@@ -60,7 +60,7 @@ export const getStaircaseDetectionTimeline = (
   participantVisibilityThreshold: ParticipantVisibilityThreshold
 ) => {
   // Declare and initiate a timeline array
-  let timeline = [];
+  let timeline: any[] = [];
   // Define some "global" state variables
   let currentGratingVisibility = GRATING_VISIBILITY_LEVEL_INIT;
   let cyclesCarriedOut = 0;

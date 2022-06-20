@@ -85,7 +85,7 @@ export async function run({ assetPaths, input = {}, environment }) {
   });
 
   // Define the main timeline array
-  const timeline = [];
+  const timeline: any[] = [];
 
   // Instantiate fixation cross trial
   const fixationCrossTrial = getFixationCross();
@@ -116,48 +116,48 @@ export async function run({ assetPaths, input = {}, environment }) {
   timeline.push({
     type: SurveyHtmlFormPlugin,
     html: `<h3>Willkommen</h3>
-  <p>
-    Vielen Dank, dass Sie an der Studie teilnehmen. Zunächst werden Sie ein paar
-    Informationen zum Datenschutz und zu Ihren Rechten erhalten.
-  </p>
-  <p>
-    Die Daten, welche wir durch Ihre Teilnahme erheben, werden innerhalb der
-    Schweiz auf einem Server der Universität Bern gespeichert. Sie sind
-    anonymisiert, sodass keine Rückschlüsse auf Ihre Person möglich sind.
-  </p>
-  <p>
-    Sie dürfen die Studie jederzeit abbrechen, ohne, dass Ihnen daraus Nachteile
-    entstehen. Ihre Daten werden nicht verwendet, wenn Sie die Studie nicht
-    abschliessen.
-  </p>
-  <p>
-    Falls Sie zu einem späteren Zeitpunkt möchten, dass Ihre Daten doch nicht
-    verwendet werden, können Sie ohne Konsequenzen eine Löschung beantragen.
-    Kontaktieren Sie dafür bitte die Studienleitung.
-  </p>
-  <p>
-    Damit wir Ihre (anonymisierten) Daten in diesem Fall identifizieren können,
-    werden sie mit einer einzigartigen ID versehen. Diese ID wird Ihnen jetzt
-    <strong>genau einmal</strong> angezeigt. Bitte notieren Sie diese für den
-    Fall, dass Sie ihre Daten später löschen lassen möchten.
-  </p>
-  <p>ID: <strong>${participantId}</strong></p>
-  <p>
-    <label>
-      <input
-        name="checkbox_agree"
-        id="checkbox_agree"
-        type="checkbox"
-        class="checkbox-input"
-        required
-      />
-      Hiermit bestätige ich, dass ich freiwillig an dieser Studie teilnehme, die
-      Informationen gelesen und verstanden habe und den Bedingungen zustimme.
-      Meine Daten-ID habe ich notiert.
-    </label>
-  </p>
-  <div class="vertical_spacer"></div>
-  `,
+    <p>
+      Vielen Dank, dass Sie an der Studie teilnehmen. Zunächst werden Sie ein paar
+      Informationen zum Datenschutz und zu Ihren Rechten erhalten.
+    </p>
+    <p>
+      Die Daten, welche wir durch Ihre Teilnahme erheben, werden innerhalb der
+      Schweiz auf einem Server der Universität Bern gespeichert. Sie sind
+      anonymisiert, sodass keine Rückschlüsse auf Ihre Person möglich sind.
+    </p>
+    <p>
+      Sie dürfen die Studie jederzeit abbrechen, ohne, dass Ihnen daraus Nachteile
+      entstehen. Ihre Daten werden nicht verwendet, wenn Sie die Studie nicht
+      abschliessen.
+    </p>
+    <p>
+      Falls Sie zu einem späteren Zeitpunkt möchten, dass Ihre Daten doch nicht
+      verwendet werden, können Sie ohne Konsequenzen eine Löschung beantragen.
+      Kontaktieren Sie dafür bitte die Studienleitung.
+    </p>
+    <p>
+      Damit wir Ihre (anonymisierten) Daten in diesem Fall identifizieren können,
+      werden sie mit einer einzigartigen ID versehen. Diese ID wird Ihnen jetzt
+      <strong>genau einmal</strong> angezeigt. Bitte notieren Sie diese für den
+      Fall, dass Sie ihre Daten später löschen lassen möchten.
+    </p>
+    <p>ID: <strong>${participantId}</strong></p>
+    <p>
+      <label>
+        <input
+          name="checkbox_agree"
+          id="checkbox_agree"
+          type="checkbox"
+          class="checkbox-input"
+          required
+        />
+        Hiermit bestätige ich, dass ich freiwillig an dieser Studie teilnehme, die
+        Informationen gelesen und verstanden habe und den Bedingungen zustimme.
+        Meine Daten-ID habe ich notiert.
+      </label>
+    </p>
+    <div class="vertical_spacer"></div>
+    `,
     button_label: 'Weiter',
   });
 
@@ -165,50 +165,50 @@ export async function run({ assetPaths, input = {}, environment }) {
   timeline.push({
     type: SurveyHtmlFormPlugin,
     html: `<p>
-  Bevor wir mit dem eigentlichen Experiment starten, haben wir noch ein paar
-  Fragen zu ihrer Person.
-</p>
-<p>
-  <fieldset>
-    <legend>Welchem Geschlecht fühlen Sie sich zugehörig?</legend>
-    <div>
-      <input type="radio" id="option_gender_diverse" name="gender" value="diverse" required>
-      <label for="option_gender_diverse">Divers</label>
-    </div>
-    <div>
-      <input type="radio" id="option_gender_female" name="gender" value="female" required>
-      <label for="option_gender_female">Weiblich</label>
-    </div>
-    <div>
-      <input type="radio" id="option_gender_male" name="gender" value="male" required>
-      <label for="option_gender_male">Männlich</label>
-    </div>
-  </fieldset>
-  <div class="vertical_spacer"></div>
-  <fieldset>
-    <legend>Wie alt sind Sie in Jahren?</legend>
-    <div>
-      <input type="number" id="age" name="age" required>
-    </div>
-  </fieldset>
-  <div class="vertical_spacer"></div>
-  <fieldset>
-    <legend>Wie ist Ihre Händigkeit?</legend>
-    <div>
-      <input type="radio" id="option_handedness_left" name="handedness" value="left" required>
-      <label for="option_handedness_left">Linkshändig</label>
-    </div>
-    <div>
-      <input type="radio" id="option_handedness_right" name="handedness" value="right" required>
-      <label for="option_handedness_right">Rechtshändig</label>
-    </div>
-    <div>
-      <input type="radio" id="option_handedness_both" name="handedness" value="both" required>
-      <label for="option_handedness_both">Beidhändig</label>
-    </div>
-  </fieldset>
-  <div class="vertical_spacer"></div>
-</p>`,
+    Bevor wir mit dem eigentlichen Experiment starten, haben wir noch ein paar
+    Fragen zu ihrer Person.
+  </p>
+  <p>
+    <fieldset>
+      <legend>Welchem Geschlecht fühlen Sie sich zugehörig?</legend>
+      <div>
+        <input type="radio" id="option_gender_diverse" name="gender" value="diverse" required>
+        <label for="option_gender_diverse">Divers</label>
+      </div>
+      <div>
+        <input type="radio" id="option_gender_female" name="gender" value="female" required>
+        <label for="option_gender_female">Weiblich</label>
+      </div>
+      <div>
+        <input type="radio" id="option_gender_male" name="gender" value="male" required>
+        <label for="option_gender_male">Männlich</label>
+      </div>
+    </fieldset>
+    <div class="vertical_spacer"></div>
+    <fieldset>
+      <legend>Wie alt sind Sie in Jahren?</legend>
+      <div>
+        <input type="number" id="age" name="age" required>
+      </div>
+    </fieldset>
+    <div class="vertical_spacer"></div>
+    <fieldset>
+      <legend>Wie ist Ihre Händigkeit?</legend>
+      <div>
+        <input type="radio" id="option_handedness_left" name="handedness" value="left" required>
+        <label for="option_handedness_left">Linkshändig</label>
+      </div>
+      <div>
+        <input type="radio" id="option_handedness_right" name="handedness" value="right" required>
+        <label for="option_handedness_right">Rechtshändig</label>
+      </div>
+      <div>
+        <input type="radio" id="option_handedness_both" name="handedness" value="both" required>
+        <label for="option_handedness_both">Beidhändig</label>
+      </div>
+    </fieldset>
+    <div class="vertical_spacer"></div>
+  </p>`,
     button_label: 'Weiter',
     data: {
       test_part: 'survey_demographics',
@@ -222,28 +222,28 @@ export async function run({ assetPaths, input = {}, environment }) {
   timeline.push({
     type: HtmlKeyboardResponsePlugin,
     stimulus: `
-      <p>
-        Während diesem Experiment werden Sie nach <strong>verrauschten
-          Gittermustern</strong> suchen (siehe unten).
-      </p>
-      <p>
-        <strong>Gittermuster</strong> bestehen aus schwarz-weiss gestreiften
-        Linien (links).
-      </p>
-      <p>
-        Das <strong>Rauschen</strong> ist eine Sammlung von zufällig
-        angeordneten schwarzen und weissen Punkten (mitte).
-      </p>
-      <p>
-        Ihre Aufgabe besteht darin, bei jedem Durchgang anzugeben, ob Sie ein
-        Gittermuster gesehen haben oder nicht (rechts).
-      </p>
-      <div class="vertical_spacer"></div>
-      <div class="vertical_spacer"></div>
-      <img src='media/images/example-stimulus.jpg' width=700></img>
-      <div class="vertical_spacer"></div>
-      <p>Drücken Sie die [Leertaste], um fortzufahren.</p>
-    `,
+        <p>
+          Während diesem Experiment werden Sie nach <strong>verrauschten
+            Gittermustern</strong> suchen (siehe unten).
+        </p>
+        <p>
+          <strong>Gittermuster</strong> bestehen aus schwarz-weiss gestreiften
+          Linien (links).
+        </p>
+        <p>
+          Das <strong>Rauschen</strong> ist eine Sammlung von zufällig
+          angeordneten schwarzen und weissen Punkten (mitte).
+        </p>
+        <p>
+          Ihre Aufgabe besteht darin, bei jedem Durchgang anzugeben, ob Sie ein
+          Gittermuster gesehen haben oder nicht (rechts).
+        </p>
+        <div class="vertical_spacer"></div>
+        <div class="vertical_spacer"></div>
+        <img src='media/images/example-stimulus.jpg' width=700></img>
+        <div class="vertical_spacer"></div>
+        <p>Drücken Sie die [Leertaste], um fortzufahren.</p>
+      `,
     choices: [' '],
   });
 
